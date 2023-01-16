@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginFlow.Views.SettingsPage"
+             Title="Settings">
+    <Grid RowDefinitions="2*,*" Margin="0,10,0,0">
+        <VerticalStackLayout Padding="10" VerticalOptions="Center" HorizontalOptions="Center">
+            <Frame BorderColor="Gray"
+               CornerRadius="10"
+               HasShadow="True"
+               Margin="0,-20,0,0"
+               ZIndex="0"
+               Padding="8">
+                <Frame.Shadow>
+                    <Shadow Brush="Black"
+                Offset="20,20"
+                Radius="10"
+                Opacity="0.9" />
+                </Frame.Shadow>
+                <StackLayout Padding="10">
+
+                    <VerticalStackLayout Padding="10">
+
+                        <VerticalStackLayout Padding="0" Margin="0,5,0,0">
+                            <HorizontalStackLayout>
+                                <Label FontSize="34" TextColor="Green" FontAttributes="Bold" Text="W"/>
+                                <Label FontSize="34" TextColor="Red" FontAttributes="Bold" Text="e"/>
+                                <Label FontSize="34" TextColor="Purple" FontAttributes="Bold" Text="l"/>
+                                <Label FontSize="34" TextColor="Brown" FontAttributes="Bold" Text="c"/>
+                                <Label FontSize="34" TextColor="SkyBlue" FontAttributes="Bold" Text="o"/>
+                                <Label FontSize="34" TextColor="OrangeRed" FontAttributes="Bold" Text="m"/>
+                                <Label FontSize="34" TextColor="Aquamarine" FontAttributes="Bold" Text="e"/>
+                            </HorizontalStackLayout>
+                            <Label
+                                Text="to Settings"
+                                FontSize="24"
+                                FontAttributes="Bold"
+                                />
+                            <Label
+                                Text="Your are currently logged in!"
+                                FontSize="16"
+                                />
+                            <BoxView Color="Black"
+                                 Margin="0,20,0,0"
+                                 HeightRequest="2"
+                                 HorizontalOptions="Fill" />
+                            <Button
+                                Margin="0,20,0,0"
+                                Text="Logout"
+                                x:Name="LogoutButton"
+                                Clicked="LogoutButton_Clicked"
+                                />
+                        </VerticalStackLayout>
+
+
+                       
+                        
+
+                    </VerticalStackLayout>
+                </StackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

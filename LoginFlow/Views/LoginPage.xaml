@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginFlow.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             Title="LoginPage">
+    <Grid RowDefinitions="2*,*" Margin="0,10,0,0">
+        <VerticalStackLayout Padding="10" VerticalOptions="Center" HorizontalOptions="Center">
+            <Frame BorderColor="Gray"
+               CornerRadius="10"
+               HasShadow="True"
+               Margin="0,-20,0,0"
+               ZIndex="0"
+               Padding="8">
+                <Frame.Shadow>
+                    <Shadow Brush="Black"
+                Offset="20,20"
+                Radius="10"
+                Opacity="0.9" />
+                </Frame.Shadow>
+                <StackLayout Padding="10">
+                    <VerticalStackLayout Padding="10" BackgroundColor="{StaticResource White}">
+                        <Image
+                Source="brushfill.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="80"
+                    IsVisible="False"
+                HorizontalOptions="Center" />
+                        <Label Text="Login"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       FontFamily="Consolas"
+                       Padding="5"/>
+                        <Label Text="to continue!" TextColor="Black"
+           FontSize="14" Padding="5"
+           FontAttributes="Bold" />
+                    </VerticalStackLayout>
+
+                    <!--<BoxView Color="Gray"
+             HeightRequest="2"
+             HorizontalOptions="Fill" />-->
+                    <VerticalStackLayout Padding="10">
+                        <Label FontFamily="Consolas" Text="Username"/>
+                        <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                            <VerticalStackLayout>
+
+                                <Entry x:Name="Username" Text="{Binding Email,Mode=TwoWay}" Margin="5,0,0,0" Placeholder="Username" FontSize="18">
+                                </Entry>
+
+                            </VerticalStackLayout>
+                        </Frame>
+                        <VerticalStackLayout Padding="0" Margin="0,5,0,0">
+                            <Label FontFamily="Consolas" Text="Password"/>
+                            <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                                <Entry x:Name="Password" Text="{Binding Password,Mode=TwoWay}" Margin="5,0,0,0" Placeholder="Password"
+                                   IsPassword="True" FontSize="18">
+                                    <Entry.Behaviors>
+
+                                    </Entry.Behaviors>
+                                </Entry>
+                            </Frame>
+                        </VerticalStackLayout>
+
+
+                        <Button Margin="0,20,0,0"
+                                x:Name="LoginButton"
+                                Clicked="LoginButton_Clicked"
+                                Text="Login" VerticalOptions="CenterAndExpand" 
+                                HorizontalOptions="FillAndExpand"/>
+
+                        <BoxView Color="Black"
+                                 Margin="0,20,0,0"
+                                 HeightRequest="2"
+                                 HorizontalOptions="Fill" />
+                        <VerticalStackLayout Padding="10" Margin="0,10,0,0">
+                            <Label HorizontalOptions="Center"
+                                FontAttributes="Bold"
+                                FontFamily="Consolas">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span FontFamily="Consolas" FontAttributes="Bold" Text="Don't have an account?" />
+                                        <Span FontFamily="Consolas" FontAttributes="Bold" Text="Sign Up"
+                  TextColor="{StaticResource Primary}"
+                  TextDecorations="Underline">
+                                            <Span.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding ValidateCommand}"
+                                          CommandParameter="https://learn.microsoft.com/dotnet/maui/" />
+                                            </Span.GestureRecognizers>
+                                        </Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Text="{Binding IsButtonEnabled}"/>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                </StackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
